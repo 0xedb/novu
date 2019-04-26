@@ -1,10 +1,41 @@
-import React from "react";
-import { render } from "react-dom";
+import React, { Component, Fragment } from 'react';
+import { render } from 'react-dom';
+import NewsBoard from './components/newsboard';
 
-const App = props => (
-  <div>
-    <h1>Hello Phonegap from react</h1>
-  </div>
-);
+class App extends Component {
+	constructor(props) {
+		super(props);
+		this.timeout = 1000;
+		this.state = {
+			continue: false,
+		};
+	}
 
-render(<App />, document.querySelector("#app"));
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({ continue: true });
+		}, this.timeout);
+	}
+
+	displayNotice() {
+		window.localStorage.getItem('old') ? null : alert('Double tap the button to refresh news');
+	}
+
+	render() {
+		{
+			console.log('started!!!!!!!!!!!!!');
+		}
+		return this.state.continue ? (
+			<Fragment>
+				<NewsBoard />
+				{setTimeout(() => this.displayNotice(), this.timeout)}
+			</Fragment>
+		) : (
+			<div className="landing">
+				<div className="animate">Novu::News</div>
+			</div>
+		);
+	}
+}
+
+render(<App />, document.querySelector('#app'));
