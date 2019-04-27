@@ -1,42 +1,56 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import NProgress from 'nprogress';
+import NewItem from './newsitem';
 
 class Top extends Component {
 	constructor(props) {
 		super(props);
 		this.news_items = new Map();
+		this.articlce = [];
+		this.count = 0;
+		this.state = {
+			doneNews: null,
+		};
 	}
 
-	componentWillMount() {
-		console.log(`I'm about to mount!!`);
-		NProgress.start();
-
-		// load initial news;
-		const kinds = ['topstories', 'newstories', 'askstories', 'showstories'];
-		for (const value of kinds) {
+	renderNews(type) {
+		this.article = [];
+		this.news_items.get(type).forEach((id, key, map) => {
 			axios
-				.get(`https://hacker-news.firebaseio.com/v0/${value}.json?print=pretty`)
+				.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
 				.then(res => {
-                    this.news_items.set(value, res.data);
-                    console.log(res.data);
+					// console.log(this.count++);
+					this.count++;
+					const properties = {
+						url: res.data.url,
+						title: res.data.title,
+						score: res.data.score,
+						by: res.data.by,
+						tile: res.data.time,
+						kids: res.data.kids,
+					};
+					this.articlce.push(<NewItem {...properties} />);
+					if (this.count == 20) {
+						this.setState({ doneNews: this.count });
+					}
 				})
 				.catch(err => console.log(err));
-		}
-		console.log(this.news_items.get('topstories'));
-		NProgress.done().remove();
+		});
 	}
 
-	renderNews() {}
-
-	loadNews(which) {
+	loadNews(type, load = false) {
+		if (load && this.news_items.has(type)) return; // prevent unecessary reload
 		NProgress.start();
 		axios
-			.get(`https://hacker-news.firebaseio.com/v0/${this.props.type}.json`, { params: { print: `pretty` } })
+			.get(`https://hacker-news.firebaseio.com/v0/${type}.json`, { params: { print: `pretty` } })
 			.then(res => {
-				console.log(res.data);
-				NProgress.done().remove();
+				this.news_items.set(type, res.data);
+
+				// render
+				this.renderNews(type);
 			})
+			.then(NProgress.done().remove())
 			.catch(err => {
 				alert(err);
 				NProgress.done().remove();
@@ -46,8 +60,9 @@ class Top extends Component {
 	render() {
 		return (
 			<Fragment>
-				<h2>{this.props.msg}</h2>
-				{this.props.refresh ? this.loadNews() : null}
+				{this.articlce.map(e => e)}
+				{this.props.refresh ? this.loadNews(this.props.type) : null}
+				{this.props.load ? this.loadNews(this.props.type, true) : null}
 			</Fragment>
 		);
 	}

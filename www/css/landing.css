@@ -5,6 +5,10 @@ html {
 	margin: 0px;
 }
 
+#news-content {
+	border: 1px solid rgba(0, 0, 0, 0.356);
+}
+
 .landing {
 	/* background-image: linear-gradient(to top, #e0e0e0, #dbdbdbe7); */
 	height: 100vh;
@@ -19,10 +23,10 @@ h1 {
 }
 
 footer {
-	position: absolute;
+	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: 80px;
+	height: 10%;
 	background: rgb(201, 196, 221);
 }
 
@@ -35,7 +39,7 @@ footer button {
 
 .news-container {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	background-color: rgb(240, 173, 48);
 }
 

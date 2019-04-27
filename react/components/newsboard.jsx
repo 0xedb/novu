@@ -7,7 +7,7 @@ import bookmarkTabs from '@iconify/react/twemoji/bookmark-tabs';
 
 import Top from './top';
 const [New, Ask, Show] = [Top, Top, Top];
-const latest = <Top msg="top" type="topstories" />;
+const latest = <Top msg="top" type="topstories" load="load" />;
 
 class NewsBoard extends Component {
 	constructor(props) {
@@ -22,15 +22,15 @@ class NewsBoard extends Component {
 	}
 
 	showNew() {
-		this.setState({ active: <New msg="new" type="newstories" /> });
+		this.setState({ active: <New msg="new" type="newstories" load="load" /> });
 	}
 
 	showAsk() {
-		this.setState({ active: <Ask msg="ask" type="askstories" /> });
+		this.setState({ active: <Ask msg="ask" type="askstories" load="load" /> });
 	}
 
 	showShow() {
-		this.setState({ active: <Show msg="show" type="showstories" /> });
+		this.setState({ active: <Show msg="show" type="showstories" load="load" /> });
 	}
 
 	reload(param, event) {

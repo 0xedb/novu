@@ -8,7 +8,7 @@ document.addEventListener(
 	'deviceready',
 	() => {
 		console.log('project setup ready');
-		storage.getItem('old') ? this.storage.setItem('old', 'true') : null;
+		// storage.getItem('old') ? this.storage.setItem('old', 'true') : null;
 		document.body.appendChild(my_awesome_script);
 	},
 	false
