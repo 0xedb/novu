@@ -5,7 +5,7 @@ import NewsBoard from './components/newsboard';
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.timeout = 1000;
+		this.timeout = 100;
 		this.state = {
 			continue: false,
 		};
@@ -32,7 +32,9 @@ class App extends Component {
 			</Fragment>
 		) : (
 			<div className="landing">
-				<div className="animate">Novu::News</div>
+				<div className="animate">
+					<h1>Novu::News</h1>
+				</div>
 			</div>
 		);
 	}

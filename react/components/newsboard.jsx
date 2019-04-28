@@ -40,6 +40,9 @@ class NewsBoard extends Component {
 	render() {
 		return (
 			<div className="board">
+				<div className='top-bar'>
+					<span>Novu::News for Techies</span>
+				</div>
 				<div className="news-container">
 					<div className="news-body">{this.state.active}</div>
 				</div>

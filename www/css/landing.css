@@ -5,8 +5,28 @@ html {
 	margin: 0px;
 }
 
-#news-content {
-	border: 1px solid rgba(0, 0, 0, 0.356);
+.by {
+	color: #de0c0c;
+}
+
+.score {
+	color: #e100ff;
+	font-size: 16px;
+}
+
+.news-content {
+	border: 1px solid rgba(0, 0, 0, 0.05);
+	padding: 14px;
+	background-color: #ffc107;
+}
+
+.news-content:nth-child(even) {
+	background-color: #f1d37b;
+}
+
+.news-content a {
+	color: #004ac1ed;
+	font-size: 18px;
 }
 
 .landing {
@@ -30,6 +50,14 @@ footer {
 	background: rgb(201, 196, 221);
 }
 
+.top-bar {
+	position: fixed;
+	text-align: center;
+	top: 0;
+	width: 100%;
+	background: #b56565;
+}
+
 footer button {
 	width: 25%;
 	height: 100%;
@@ -40,7 +68,9 @@ footer button {
 .news-container {
 	width: 100%;
 	height: 100%;
-	background-color: rgb(240, 173, 48);
+	background-color: #ffffff;
+	padding-bottom: 14%;
+	margin-top: 5%;
 }
 
 .landing {
@@ -91,7 +121,7 @@ footer button {
 
 h1,
 h6 {
-	font-family: 'Open Sans';
+	/* font-family: 'Open Sans'; */
 	font-weight: 300;
 	text-align: center;
 	position: absolute;
@@ -107,7 +137,12 @@ div.animate {
 	font-weight: bold;
 	color: #f2f7ff;
 	/* width: 300px; */
-	padding-top: 20%;
+	/* padding-top: 20%; */
+	text-align: center;
+	position: absolute;
+	top: 45%;
+	right: 0;
+	left: 0;
 
 	-webkit-animation: jump 1.5s ease-in 0s infinite reverse forwards;
 	animation: jump 1.5s ease-in 0s infinite reverse forwards;

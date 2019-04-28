@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 import NProgress from 'nprogress';
 import NewItem from './newsitem';
+import $ from 'jquery';
 
 class Top extends Component {
 	constructor(props) {
@@ -15,7 +16,6 @@ class Top extends Component {
 	}
 
 	renderNews(type) {
-		this.article = [];
 		this.news_items.get(type).forEach((id, key, map) => {
 			axios
 				.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
@@ -29,9 +29,10 @@ class Top extends Component {
 						by: res.data.by,
 						tile: res.data.time,
 						kids: res.data.kids,
+						key: Math.random() + this.count + res.data.by,
 					};
 					this.articlce.push(<NewItem {...properties} />);
-					if (this.count == 20) {
+					if (this.count === 1 || this.count % 20) {
 						this.setState({ doneNews: this.count });
 					}
 				})
@@ -40,8 +41,13 @@ class Top extends Component {
 	}
 
 	loadNews(type, load = false) {
-		if (load && this.news_items.has(type)) return; // prevent unecessary reload
 		NProgress.start();
+		if (load && this.news_items.has(type)) {
+			this.article = [];
+			NProgress.done().remove();
+			return;
+		} // prevent unecessary reload
+
 		axios
 			.get(`https://hacker-news.firebaseio.com/v0/${type}.json`, { params: { print: `pretty` } })
 			.then(res => {

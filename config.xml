@@ -9,5 +9,5 @@
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <plugin name="cordova-plugin-inappbrowser" spec="3.0.0" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 </widget>
