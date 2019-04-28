@@ -18,7 +18,7 @@ class Top extends Component {
 			url: 'http://google.com',
 			success: function(result) {
 				alert('success');
-			},
+			}, 
 			error: err => alert(err),
 		});
 	}
