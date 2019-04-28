@@ -9,6 +9,12 @@ import Top from './top';
 const [New, Ask, Show] = [Top, Top, Top];
 const latest = <Top msg="top" type="topstories" load="load" />;
 
+// const shakeHandler = () => {
+// 	window.open('https://google.com', '_system');
+// };
+
+// shake.startWatch(shakeHandler, 40);
+
 class NewsBoard extends Component {
 	constructor(props) {
 		super(props);
@@ -40,7 +46,7 @@ class NewsBoard extends Component {
 	render() {
 		return (
 			<div className="board">
-				<div className='top-bar'>
+				<div className="top-bar">
 					<span>Novu::News for Techies</span>
 				</div>
 				<div className="news-container">
