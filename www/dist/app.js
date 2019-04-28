@@ -39218,17 +39218,6 @@ function (_Component) {
     _this.state = {
       doneNews: null
     };
-
-    _jquery.default.ajax({
-      url: 'http://google.com',
-      success: function success(result) {
-        alert('success');
-      },
-      error: function error(err) {
-        return alert(err);
-      }
-    });
-
     return _this;
   }
 
@@ -39306,7 +39295,9 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.Fragment, null);
+      return _react.default.createElement(_react.Fragment, null, this.articlce.map(function (e) {
+        return e;
+      }), this.props.refresh ? this.loadNews(this.props.type) : null, this.props.load ? this.loadNews(this.props.type, true) : null);
     }
   }]);
 

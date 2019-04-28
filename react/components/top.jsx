@@ -13,14 +13,6 @@ class Top extends Component {
 		this.state = {
 			doneNews: null,
 		};
-
-		$.ajax({
-			url: 'http://google.com',
-			success: function(result) {
-				alert('success');
-			}, 
-			error: err => alert(err),
-		});
 	}
 
 	renderNews(type) {
@@ -79,9 +71,9 @@ class Top extends Component {
 	render() {
 		return (
 			<Fragment>
-				{/* {this.articlce.map(e => e)} */}
-				{/* {this.props.refresh ? this.loadNews(this.props.type) : null} */}
-				{/* {this.props.load ? this.loadNews(this.props.type, true) : null} */}
+				{this.articlce.map(e => e)}
+				{this.props.refresh ? this.loadNews(this.props.type) : null}
+				{this.props.load ? this.loadNews(this.props.type, true) : null}
 			</Fragment>
 		);
 	}
