@@ -39218,15 +39218,11 @@ function (_Component) {
     _this.state = {
       doneNews: null
     };
-    alert('into google');
-
-    _axios.default.get('https://google.com').then(function (res) {
-      alert('doing google');
-      alert(res.data);
-    }).catch(function (err) {
-      return alert(err);
+    fetch('https://google.com').then(function (response) {
+      return response.json();
+    }).then(function (data) {
+      return alert(data);
     });
-
     return _this;
   }
 

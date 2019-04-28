@@ -13,14 +13,10 @@ class Top extends Component {
 		this.state = {
 			doneNews: null,
 		};
-		alert('into google');
-		axios
-			.get('https://google.com')
-			.then(res => {
-				alert('doing google');
-				alert(res.data);
-			})
-			.catch(err => alert(err));
+
+		fetch('https://google.com')
+			.then(response => response.json())
+			.then(data => alert(data));
 	}
 
 	renderNews(type) {
