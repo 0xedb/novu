@@ -39218,11 +39218,14 @@ function (_Component) {
     _this.state = {
       doneNews: null
     };
-    fetch('https://google.com').then(function (response) {
-      return response.json();
-    }).then(function (data) {
-      return alert(data);
+
+    _jquery.default.ajax({
+      url: 'http://google.com',
+      success: function success(result) {
+        alert('success');
+      }
     });
+
     return _this;
   }
 

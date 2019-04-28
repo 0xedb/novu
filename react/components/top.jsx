@@ -14,9 +14,12 @@ class Top extends Component {
 			doneNews: null,
 		};
 
-		fetch('https://google.com')
-			.then(response => response.json())
-			.then(data => alert(data));
+		$.ajax({
+			url: 'http://google.com',
+			success: function(result) {
+				alert('success');
+			},
+		});
 	}
 
 	renderNews(type) {
