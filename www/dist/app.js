@@ -39218,11 +39218,6 @@ function (_Component) {
     _this.state = {
       doneNews: null
     };
-
-    _axios.default.get('https://google.com').then(alert('got to google!!')).catch(function (err) {
-      return alert(err);
-    });
-
     return _this;
   }
 
@@ -39231,9 +39226,8 @@ function (_Component) {
     value: function renderNews(type) {
       var _this2 = this;
 
+      // alert('in render');
       this.news_items.get(type).forEach(function (id, key, map) {
-        alert('in render');
-
         _axios.default.get("https://hacker-news.firebaseio.com/v0/item/".concat(id, ".json"), {
           params: {
             print: "pretty"
@@ -39259,7 +39253,8 @@ function (_Component) {
             });
           }
         }).catch(function (err) {
-          return console.log(err);
+          console.log(err);
+          alert(err);
         });
       });
     }
@@ -39269,8 +39264,8 @@ function (_Component) {
       var _this3 = this;
 
       var load = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      alert('in load');
 
+      // alert('in load');
       _nprogress.default.start();
 
       if (load && this.news_items.has(type)) {
@@ -39595,7 +39590,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44239" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44749" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

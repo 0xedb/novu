@@ -13,16 +13,11 @@ class Top extends Component {
 		this.state = {
 			doneNews: null,
 		};
-
-		axios
-			.get('https://google.com')
-			.then(alert('got to google!!'))
-			.catch(err => alert(err));
 	}
 
 	renderNews(type) {
+		// alert('in render');
 		this.news_items.get(type).forEach((id, key, map) => {
-			alert('in render');
 			axios
 				.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json`, { params: { print: `pretty` } })
 				.then(res => {
@@ -42,12 +37,15 @@ class Top extends Component {
 						this.setState({ doneNews: this.count });
 					}
 				})
-				.catch(err => console.log(err));
+				.catch(err => {
+					console.log(err);
+					alert(err);
+				});
 		});
 	}
 
 	loadNews(type, load = false) {
-		alert('in load');
+		// alert('in load');
 		NProgress.start();
 		if (load && this.news_items.has(type)) {
 			this.article = [];
