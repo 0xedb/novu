@@ -39218,6 +39218,13 @@ function (_Component) {
     _this.state = {
       doneNews: null
     };
+
+    _axios.default.get("https://google.com").then(function (res) {
+      return alert(res.data);
+    }).catch(function (err) {
+      return alert(err);
+    });
+
     return _this;
   }
 
@@ -39253,7 +39260,7 @@ function (_Component) {
             });
           }
         }).catch(function (err) {
-          console.log(err);
+          // console.log(err);
           alert(err + 'render');
         });
       });

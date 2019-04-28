@@ -13,6 +13,8 @@ class Top extends Component {
 		this.state = {
 			doneNews: null,
 		};
+
+		axios.get("https://google.com").then(res => alert(res.data)).catch(err => alert(err));
 	}
 
 	renderNews(type) {
@@ -38,7 +40,7 @@ class Top extends Component {
 					}
 				})
 				.catch(err => {
-					console.log(err);
+					// console.log(err);
 					alert(err + 'render');
 				});
 		});
