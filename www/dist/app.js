@@ -39231,6 +39231,7 @@ function (_Component) {
     value: function renderNews(type) {
       var _this2 = this;
 
+      alert("in render");
       this.news_items.get(type).forEach(function (id, key, map) {
         _axios.default.get("https://hacker-news.firebaseio.com/v0/item/".concat(id, ".json?print=pretty")).then(function (res) {
           // console.log(this.count++);
@@ -39263,6 +39264,7 @@ function (_Component) {
       var _this3 = this;
 
       var load = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      alert('in load');
 
       _nprogress.default.start();
 

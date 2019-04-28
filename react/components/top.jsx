@@ -21,6 +21,7 @@ class Top extends Component {
 	}
 
 	renderNews(type) {
+		alert("in render");
 		this.news_items.get(type).forEach((id, key, map) => {
 			axios
 				.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
@@ -46,6 +47,7 @@ class Top extends Component {
 	}
 
 	loadNews(type, load = false) {
+		alert('in load');
 		NProgress.start();
 		if (load && this.news_items.has(type)) {
 			this.article = [];
