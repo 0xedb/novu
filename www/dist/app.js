@@ -39234,7 +39234,11 @@ function (_Component) {
       this.news_items.get(type).forEach(function (id, key, map) {
         alert('in render');
 
-        _axios.default.get("https://hacker-news.firebaseio.com/v0/item/".concat(id, ".json?print=pretty")).then(function (res) {
+        _axios.default.get("https://hacker-news.firebaseio.com/v0/item/".concat(id, ".json"), {
+          params: {
+            print: "pretty"
+          }
+        }).then(function (res) {
           // console.log(this.count++);
           _this2.count++;
           var properties = {
