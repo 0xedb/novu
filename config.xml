@@ -16,5 +16,6 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <allow-navigation href="*" />
+    <allow-navigation href="*" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 </widget>
