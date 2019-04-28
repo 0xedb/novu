@@ -39518,7 +39518,7 @@ function (_Component) {
     _classCallCheck(this, App);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
-    _this.timeout = 100;
+    _this.timeout = 3000;
     _this.state = {
       continue: false
     };
@@ -39595,7 +39595,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44749" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33187" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
