@@ -39539,7 +39539,11 @@ function (_Component) {
   }, {
     key: "displayNotice",
     value: function displayNotice() {
-      window.localStorage.getItem('old') ? null : alert('Hello, Welcome to Novu, an HN client');
+      // window.localStorage.getItem('old') ? null : alert('Hello, Welcome to Novu, an HN client');
+      if (window.localStorage.getItem('is_new')) return;else {
+        alert('Hello, Welcome to Novu, an HN client');
+        window.localStorage.setItem('is_new', 'yes');
+      }
     }
   }, {
     key: "render",

@@ -8,7 +8,7 @@ document.addEventListener(
 	'deviceready',
 	() => {
 		console.log('project setup ready');
-		storage.getItem('old') ? this.storage.setItem('old', 'true') : null;
+		// storage.setItem('old', 'old');
 		window.addEventListener('offline', () => {
 			alert("You're offline! No news anymore");
 		});
