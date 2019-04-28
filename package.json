@@ -2,14 +2,14 @@
 	"dependencies": {
 		"@iconify/react": "^1.0.7",
 		"axios": "^0.18.0",
-		"cordova-plugin-inappbrowser": "^3.0.0",
 		"d": "^1.0.0",
 		"jquery": "^3.4.0",
 		"nprogress": "^0.2.0",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"react-router-dom": "^5.0.0",
-		"reactstrap": "^8.0.0"
+		"reactstrap": "^8.0.0",
+		"cordova-plugin-inappbrowser": "^3.0.0"
 	},
 	"devDependencies": {
 		"parcel-bundler": "^1.12.3"
