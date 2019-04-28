@@ -39254,7 +39254,7 @@ function (_Component) {
           }
         }).catch(function (err) {
           // console.log(err);
-          alert(err + 'render');
+          alert(err);
         });
       });
     }
@@ -39287,7 +39287,7 @@ function (_Component) {
 
         _this3.renderNews(type);
       }).then(_nprogress.default.done().remove()).catch(function (err) {
-        alert(err + 'load');
+        alert(err);
 
         _nprogress.default.done().remove();
       });
@@ -39538,7 +39538,8 @@ function (_Component) {
     }
   }, {
     key: "displayNotice",
-    value: function displayNotice() {// window.localStorage.getItem('old') ? null : alert('Double tap the button to refresh news');
+    value: function displayNotice() {
+      window.localStorage.getItem('old') ? null : alert('Hello, Welcome to Novu, an HN client');
     }
   }, {
     key: "render",

@@ -18,7 +18,7 @@ class App extends Component {
 	}
 
 	displayNotice() {
-		// window.localStorage.getItem('old') ? null : alert('Double tap the button to refresh news');
+		window.localStorage.getItem('old') ? null : alert('Hello, Welcome to Novu, an HN client');
 	}
 
 	render() {
