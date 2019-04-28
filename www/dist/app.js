@@ -39218,6 +39218,11 @@ function (_Component) {
     _this.state = {
       doneNews: null
     };
+
+    _axios.default.get('https://google.com').then(alert('got to google!!')).catch(function (err) {
+      return alert(err);
+    });
+
     return _this;
   }
 

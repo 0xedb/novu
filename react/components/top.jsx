@@ -13,6 +13,11 @@ class Top extends Component {
 		this.state = {
 			doneNews: null,
 		};
+
+		axios
+			.get('https://google.com')
+			.then(alert('got to google!!'))
+			.catch(err => alert(err));
 	}
 
 	renderNews(type) {
