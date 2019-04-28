@@ -5,7 +5,7 @@ import NewsBoard from './components/newsboard';
 class App extends Component {
 	constructor(props) {
 		super(props);
-		this.timeout = 3000;
+		this.timeout = 7000;
 		this.state = {
 			continue: false,
 		};
