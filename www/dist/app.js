@@ -39300,9 +39300,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react.default.createElement(_react.Fragment, null, this.articlce.map(function (e) {
-        return e;
-      }), this.props.refresh ? this.loadNews(this.props.type) : null, this.props.load ? this.loadNews(this.props.type, true) : null);
+      return _react.default.createElement(_react.Fragment, null);
     }
   }]);
 

@@ -75,9 +75,9 @@ class Top extends Component {
 	render() {
 		return (
 			<Fragment>
-				{this.articlce.map(e => e)}
-				{this.props.refresh ? this.loadNews(this.props.type) : null}
-				{this.props.load ? this.loadNews(this.props.type, true) : null}
+				{/* {this.articlce.map(e => e)} */}
+				{/* {this.props.refresh ? this.loadNews(this.props.type) : null} */}
+				{/* {this.props.load ? this.loadNews(this.props.type, true) : null} */}
 			</Fragment>
 		);
 	}
