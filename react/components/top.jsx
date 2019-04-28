@@ -21,8 +21,8 @@ class Top extends Component {
 	}
 
 	renderNews(type) {
-		alert("in render");
 		this.news_items.get(type).forEach((id, key, map) => {
+			alert('in render');
 			axios
 				.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
 				.then(res => {
