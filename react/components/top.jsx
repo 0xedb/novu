@@ -39,7 +39,7 @@ class Top extends Component {
 				})
 				.catch(err => {
 					console.log(err);
-					alert(err);
+					alert(err + 'render');
 				});
 		});
 	}
@@ -63,7 +63,7 @@ class Top extends Component {
 			})
 			.then(NProgress.done().remove())
 			.catch(err => {
-				alert(err);
+				alert(err + 'load');
 				NProgress.done().remove();
 			});
 	}

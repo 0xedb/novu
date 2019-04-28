@@ -39254,7 +39254,7 @@ function (_Component) {
           }
         }).catch(function (err) {
           console.log(err);
-          alert(err);
+          alert(err + 'render');
         });
       });
     }
@@ -39287,7 +39287,7 @@ function (_Component) {
 
         _this3.renderNews(type);
       }).then(_nprogress.default.done().remove()).catch(function (err) {
-        alert(err);
+        alert(err + 'load');
 
         _nprogress.default.done().remove();
       });
