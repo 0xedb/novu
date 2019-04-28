@@ -39223,6 +39223,9 @@ function (_Component) {
       url: 'http://google.com',
       success: function success(result) {
         alert('success');
+      },
+      error: function error(err) {
+        return alert(err);
       }
     });
 

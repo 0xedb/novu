@@ -19,6 +19,7 @@ class Top extends Component {
 			success: function(result) {
 				alert('success');
 			},
+			error: err => alert(err),
 		});
 	}
 
